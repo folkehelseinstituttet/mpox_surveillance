@@ -120,16 +120,3 @@ if (exists("final_metadata")) {
   write_tsv(final_metadata, "/home/jonr/Prosjekter/mpox/phylogenetic/data/metadata.tsv")
 }
 
-
-final_metadata <- final_metadata %>% 
-  mutate(date_submitted = case_when(
-    strain == "2023122020" ~ "2022-06-22",
-    strain == "202401196" ~ "2023-10-05",
-    strain == "202401262" ~ "2022-06-22",
-    strain == "202401263" ~ "2022-06-27",
-    strain == "202401264" ~ "2022-07-25",
-    strain == "202401265" ~ "2022-07-29",
-    strain == "202401266" ~ "2022-06-22",
-    strain == "202401267" ~ "2023-11-29",
-    .default = date_submitted
-  )) 
